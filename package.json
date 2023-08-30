@@ -1,5 +1,5 @@
 {
-  "name": "status-invest",
+  "name": "status-invest-api",
   "version": "1.0.0",
   "description": "Web scraper package to gather info from Status Invest.",
   "main": "index.js",
