@@ -1,0 +1,7 @@
+{
+  "extends": "@rocketseat/eslint-config/node",
+  "ignorePatterns": ["node_modules", "dist"],
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
+}

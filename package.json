@@ -1,0 +1,32 @@
+{
+  "name": "status-invest",
+  "version": "1.0.0",
+  "description": "Web scraper package to gather info from Status Invest.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": ["statusinvest", "status-invest", "b3", "cvm", "bolsa", "mercado", "financeiro"],
+  "license": "ISC",
+  "files": ["dist"],
+  "author": {
+    "name": "Vitor Lima",
+    "email": "vitorwlima13@gmail.com",
+    "url": "https://github.com/vitorwlima"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitorwlima/status-invest"
+  },
+  "scripts": {
+    "test": "tsx watch src/scripts/test.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
+    "eslint": "^8.48.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "puppeteer": "^21.1.1"
+  }
+}
