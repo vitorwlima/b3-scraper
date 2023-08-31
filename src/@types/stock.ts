@@ -5,6 +5,7 @@ export type Stock = {
   valuation: {
     price: number | null
     dividendYield: number | null
+    changeInLast12Months: number | null
     priceToProfitRatio: number | null
     pegRatio: number | null
     priceToBookRatio: number | null

@@ -1,12 +1,12 @@
 {
   "name": "status-invest-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web scraper package to gather info from Status Invest.",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": ["statusinvest", "status-invest", "b3", "cvm", "bolsa", "mercado", "financeiro"],
   "license": "ISC",
-  "files": ["dist"],
+  "files": ["dist/index.js", "dist/index.d.ts", "dist/@types", "dist/lib"],
   "author": {
     "name": "Vitor Lima",
     "email": "vitorwlima13@gmail.com",

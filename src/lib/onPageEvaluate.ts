@@ -12,6 +12,7 @@ export const onPageEvaluate = (): Stock => {
   const valuation = {
     price: Number(values[0].replace(',', '.')),
     dividendYield: Number(values[3].replace(',', '.')),
+    changeInLast12Months: Number(values[4].replace(',', '.').replace('%', '')),
     priceToProfitRatio: Number(values[11].replace(',', '.')),
     pegRatio: Number(values[12].replace(',', '.')),
     priceToBookRatio: Number(values[13].replace(',', '.')),
