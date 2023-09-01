@@ -1,6 +1,6 @@
 {
   "name": "status-invest-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Web scraper package to gather info from Status Invest.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
