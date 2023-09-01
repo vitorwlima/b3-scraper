@@ -1,12 +1,25 @@
 {
   "name": "status-invest-api",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Web scraper package to gather info from Status Invest.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "keywords": ["statusinvest", "status-invest", "b3", "cvm", "bolsa", "mercado", "financeiro"],
+  "keywords": [
+    "statusinvest",
+    "status-invest",
+    "b3",
+    "cvm",
+    "bolsa",
+    "mercado",
+    "financeiro"
+  ],
   "license": "ISC",
-  "files": ["dist/index.js", "dist/index.d.ts", "dist/@types", "dist/lib"],
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/@types",
+    "dist/lib"
+  ],
   "author": {
     "name": "Vitor Lima",
     "email": "vitorwlima13@gmail.com",
@@ -27,6 +40,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "puppeteer": "^21.1.1"
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^21.1.1"
   }
 }

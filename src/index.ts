@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer'
+import chromium from 'chrome-aws-lambda'
+import puppeteer from 'puppeteer-core'
 
 import { GetStock } from './@types/getStock'
 import { onPageEvaluate } from './lib/onPageEvaluate'
@@ -12,8 +13,9 @@ export const StatusInvest = {
 
       const browser = await puppeteer.launch({
         headless: 'new',
-        defaultViewport: null,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        defaultViewport: chromium.defaultViewport,
+        args: chromium.args,
+        executablePath: await chromium.executablePath,
       })
       log('Browser launched: ', browser)
 
