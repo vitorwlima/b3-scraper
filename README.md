@@ -1,3 +1,3 @@
-# status-invest-api
+# b3-scraper
 
-Web scraper package to gather info from Status Invest.
+Web scraper package to gather info about B3.

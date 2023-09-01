@@ -1,26 +1,23 @@
-import chromium from 'chrome-aws-lambda'
-import puppeteer from 'puppeteer-core'
-
+import puppeteer from 'puppeteer'
 import { GetStock } from './@types/getStock'
 import { onPageEvaluate } from './lib/onPageEvaluate'
 
-export const StatusInvest = {
+export const B3Scraper = {
   getStock: async ({ ticker, showLogs }: GetStock) => {
     const log = showLogs ? console.log : () => {}
 
     try {
-      log(`Getting stock data for ${ticker}`)
+      log(`[B3Scraper] - Getting stock data for ${ticker}`)
 
       const browser = await puppeteer.launch({
         headless: 'new',
-        defaultViewport: chromium.defaultViewport,
-        args: chromium.args,
-        executablePath: await chromium.executablePath,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        ignoreDefaultArgs: ['--disable-extensions'],
       })
-      log('Browser launched: ', browser)
+      log('[B3Scraper] - Browser launched')
 
       const page = await browser.newPage()
-      log('Page created: ', page)
+      log('[B3Scraper] - Page created')
 
       await page.setExtraHTTPHeaders({
         accept: '*/*',
@@ -38,22 +35,25 @@ export const StatusInvest = {
         'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)',
       })
-      log('Page headers set')
+      log('[B3Scraper] - Page headers set')
 
-      await page.goto(`https://statusinvest.com.br/acoes/${ticker}`, {
-        waitUntil: 'domcontentloaded',
-      })
-      log('Page loaded')
+      await page.goto(
+        `https://www.fundamentus.com.br/detalhes.php?papel=${ticker}`,
+        {
+          waitUntil: 'domcontentloaded',
+        },
+      )
+      log('[B3Scraper] - Page loaded')
 
       const stock = await page.evaluate(onPageEvaluate)
-      log('Stock data extracted: ', stock)
+      log('[B3Scraper] - Stock data extracted')
 
       await browser.close()
-      log('Browser closed')
+      log('[B3Scraper] - Browser closed')
 
       return stock
     } catch (e) {
-      log('Error: ', e)
+      log('[B3Scraper] - Error: ', e)
     }
   },
 }

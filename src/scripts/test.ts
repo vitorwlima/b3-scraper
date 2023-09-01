@@ -1,7 +1,7 @@
-import { StatusInvest } from '..'
+import { B3Scraper } from '..'
 
 const test = async () => {
-  const asset = await StatusInvest.getStock({ ticker: 'blau3' })
+  const asset = await B3Scraper.getStock({ ticker: 'blau3' })
   console.log(asset)
 }
 
