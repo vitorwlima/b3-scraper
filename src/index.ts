@@ -13,6 +13,7 @@ export const StatusInvest = {
       const browser = await puppeteer.launch({
         headless: 'new',
         defaultViewport: null,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
       })
       log('Browser launched: ', browser)
 
