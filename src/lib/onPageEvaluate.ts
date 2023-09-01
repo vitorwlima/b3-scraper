@@ -26,16 +26,26 @@ export const onPageEvaluate = (): Stock => {
     ),
     sector: fundamentusData.Setor,
     subSector: fundamentusData.Subsetor,
+    numberOfShares: Number(fundamentusData['Nro. Ações'].replaceAll('.', '')),
+  }
+
+  const balance = {
     marketValue: Number(
       fundamentusData['Valor de mercado'].replaceAll('.', ''),
     ),
     enterpriseValue: Number(
       fundamentusData['Valor da firma'].replaceAll('.', ''),
     ),
-    numberOfShares: Number(fundamentusData['Nro. Ações'].replaceAll('.', '')),
     netIncome: Number(fundamentusData['Receita Líquida'].replaceAll('.', '')),
     ebit: Number(fundamentusData.EBIT.replaceAll('.', '')),
     netProfit: Number(fundamentusData['Lucro Líquido'].replaceAll('.', '')),
+    assets: Number(fundamentusData.Ativo.replaceAll('.', '')),
+    currentAssets: Number(
+      fundamentusData['Ativo Circulante'].replaceAll('.', ''),
+    ),
+    grossDebt: Number(fundamentusData['Dív. Bruta'].replaceAll('.', '')),
+    netDebt: Number(fundamentusData['Dív. Líquida'].replaceAll('.', '')),
+    netWorth: Number(fundamentusData['Patrim. Líq'].replaceAll('.', '')),
   }
 
   const valuation = {
@@ -105,6 +115,7 @@ export const onPageEvaluate = (): Stock => {
 
   return {
     about,
+    balance,
     valuation,
     debt,
     efficiency,
