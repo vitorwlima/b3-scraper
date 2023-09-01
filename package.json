@@ -1,6 +1,6 @@
 {
   "name": "status-invest-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web scraper package to gather info from Status Invest.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vitorwlima/status-invest"
+    "url": "https://github.com/vitorwlima/status-invest-api"
   },
   "scripts": {
     "test": "tsx watch src/scripts/test.ts",
