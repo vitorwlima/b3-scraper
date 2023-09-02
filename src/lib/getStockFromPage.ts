@@ -1,6 +1,6 @@
 import { Stock } from '../@types/stock'
 
-export const onPageEvaluate = (): Stock => {
+export const getStockFromPage = (): Stock => {
   const values = Array.from(document.querySelectorAll('tr')).map((el) => ({
     labels: Array.from(el.querySelectorAll('td.label > span:last-child')).map(
       (el) => el.textContent!.replace('\n', '').trim(),

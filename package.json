@@ -1,6 +1,6 @@
 {
   "name": "b3-scraper",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Web scraper package to gather info about B3.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,8 @@
     "url": "https://github.com/vitorwlima/b3-scraper"
   },
   "scripts": {
-    "test": "tsx watch src/scripts/test.ts",
+    "test:get-stock": "tsx watch src/scripts/getStockTest.ts",
+    "test:get-all-stocks": "tsx watch src/scripts/getAllStocksTest.ts",
     "build": "tsc"
   },
   "devDependencies": {
