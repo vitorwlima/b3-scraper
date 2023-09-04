@@ -29,6 +29,22 @@ export const getStockFromPage = (): Stock => {
     numberOfShares: Number(fundamentusData['Nro. Ações']?.replaceAll('.', '')),
   }
 
+  const quote = {
+    price: Number(fundamentusData['Cotação']?.replaceAll(',', '.')),
+    oscilationIn30Days: Number(
+      fundamentusData['30 dias']?.replaceAll(',', '.')?.replaceAll('%', ''),
+    ),
+    oscilationIn12Months: Number(
+      fundamentusData['12 meses']?.replaceAll(',', '.')?.replaceAll('%', ''),
+    ),
+    minPriceIn52Weeks: Number(
+      fundamentusData['Min 52 sem']?.replaceAll(',', '.')?.replaceAll('%', ''),
+    ),
+    maxPriceIn52Weeks: Number(
+      fundamentusData['Max 52 sem']?.replaceAll(',', '.'),
+    ),
+  }
+
   const balance = {
     marketValue: Number(
       fundamentusData['Valor de mercado']?.replaceAll('.', ''),
@@ -49,12 +65,8 @@ export const getStockFromPage = (): Stock => {
   }
 
   const valuation = {
-    price: Number(fundamentusData['Cotação']?.replaceAll(',', '.')),
     dividendYield: Number(
       fundamentusData['Div. Yield']?.replaceAll(',', '.')?.replaceAll('%', ''),
-    ),
-    changeInLast12Months: Number(
-      fundamentusData['12 meses']?.replaceAll(',', '.')?.replaceAll('%', ''),
     ),
     priceToProfitRatio: Number(fundamentusData['P/L']?.replaceAll(',', '.')),
     priceToBookRatio: Number(fundamentusData['P/VP']?.replaceAll(',', '.')),
@@ -115,12 +127,5 @@ export const getStockFromPage = (): Stock => {
     ),
   }
 
-  return {
-    about,
-    balance,
-    valuation,
-    debt,
-    efficiency,
-    profitability,
-  }
+  return { about, quote, balance, valuation, debt, efficiency, profitability }
 }
