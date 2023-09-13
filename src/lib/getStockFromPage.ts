@@ -43,6 +43,7 @@ export const getStockFromPage = (): Stock => {
     maxPriceIn52Weeks: Number(
       fundamentusData['Max 52 sem']?.replaceAll(',', '.'),
     ),
+    lastQuoteDate: fundamentusData['Data últ cot'],
   }
 
   const balance = {

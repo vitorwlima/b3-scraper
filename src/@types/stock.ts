@@ -13,6 +13,7 @@ export type Stock = {
     oscilationIn12Months: number | null
     minPriceIn52Weeks: number | null
     maxPriceIn52Weeks: number | null
+    lastQuoteDate: string | null
   }
   balance: {
     marketValue: number | null
